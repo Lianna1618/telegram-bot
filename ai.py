@@ -1,38 +1,51 @@
+import random
 import requests
 import urllib.parse
-import random
 
-# 🧠 TEXT AI (FREE — no API, no Ollama)
+
+PROMPTS = [
+    "Write a motivational fitness Telegram post with emojis (maximum 5 lines).",
+    "Write an inspiring gym quote with emojis.",
+    "Create a short bodybuilding motivation post.",
+    "Write a fitness discipline message for beginners.",
+    "Write a powerful health motivation post."
+]
+
+
 def generate_text():
-    prompts = [
-        "Write a short viral Telegram post about fitness motivation 💪🔥 max 5 lines",
-        "Give a powerful gym motivation message with emojis 💥💪",
-        "Write a health and discipline quote for gym lovers 🏋️‍♂️",
-        "Create a motivational fitness post for beginners 🏃‍♂️🔥",
-        "Write a short bodybuilding motivation message with energy 💪⚡"
-    ]
-
-    prompt = random.choice(prompts)
+    prompt = random.choice(PROMPTS)
 
     try:
-        r = requests.post(
+        response = requests.post(
             "https://text.pollinations.ai/",
             json={"prompt": prompt},
             timeout=30
         )
 
-        if r.status_code == 200:
-            return r.text
+        response.raise_for_status()
+
+        return response.text.strip()
 
     except Exception as e:
-        print("AI error:", e)
+        print(e)
 
-    # fallback (always works)
-    return "💪 No excuses. Train hard. Stay consistent. Build your dream body!"
+        return (
+            "💪 Stay consistent.\n"
+            "🏋️ Train hard.\n"
+            "🔥 Results come to those who never quit."
+        )
 
 
-# 🖼 IMAGE AI (FREE Pollinations)
-def generate_image(prompt):
-    safe_prompt = urllib.parse.quote(prompt)
+def generate_image():
+    prompt = random.choice([
+        "muscular athlete lifting weights in gym",
+        "fitness motivation poster",
+        "bodybuilder training with cinematic lighting",
+        "healthy lifestyle fitness art",
+        "gym workout inspiration"
+    ])
 
-    return f"https://image.pollinations.ai/prompt/{safe_prompt}"
+    return (
+        "https://image.pollinations.ai/prompt/"
+        + urllib.parse.quote(prompt)
+    )
