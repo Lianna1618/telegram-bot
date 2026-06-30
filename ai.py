@@ -3,23 +3,39 @@ import requests
 import urllib.parse
 
 PROMPTS = [
-    "Write a motivational fitness Telegram post with emojis (maximum 5 lines).",
-    "Write an inspiring gym quote with emojis.",
-    "Create a short bodybuilding motivation post.",
-    "Write a fitness discipline message for beginners.",
-    "Write a powerful health motivation post.",
-    "Write a motivational post about consistency and discipline in fitness.",
-    "Create an energetic fitness motivation message for the morning.",
+    "Write a short inspiring Telegram post about the beauty of nature with emojis (maximum 5 lines).",
+    "Write a motivational post encouraging people to spend more time outdoors.",
+    "Create a healthy lifestyle tip focused on eating natural and nutritious foods.",
+    "Write an inspiring message about fresh fruits and vegetables for a Telegram channel.",
+    "Generate a positive post about enjoying peaceful landscapes and fresh air.",
+    "Write a short post about the benefits of drinking enough water and eating healthy.",
+    "Create a motivational message about living in harmony with nature.",
+    "Write a calming post about forests, mountains, and finding inner peace.",
+    "Generate an educational post about one healthy superfood and its benefits.",
+    "Write a positive message encouraging healthy eating habits every day.",
+    "Create a short wellness post about balancing nutrition, movement, and rest.",
+    "Write a relaxing morning inspiration inspired by sunrise in nature.",
+    "Generate a post about seasonal fruits and why they are good for your health.",
+    "Write an uplifting message about choosing healthy food over processed food.",
+    "Create a Telegram post celebrating beautiful natural landscapes around the world."
 ]
 
 IMAGE_PROMPTS = [
-    "muscular athlete lifting weights in modern gym, cinematic lighting, epic atmosphere",
-    "determined fitness model training hard, sweat and motivation, dramatic lighting",
-    "bodybuilder posing with intense expression, gym background, high detail",
-    "powerful fitness transformation motivation poster style",
-    "athletic person running at sunrise, motivational fitness vibe",
-    "strong woman doing pull-ups, empowering fitness aesthetic",
-    "muscular man deadlifting heavy weights, intense gym atmosphere",
+    "majestic mountain landscape at sunrise, ultra realistic, vibrant colors",
+    "peaceful forest with sun rays shining through tall trees, cinematic photography",
+    "crystal clear lake surrounded by mountains, breathtaking nature",
+    "healthy breakfast with fresh fruits, oatmeal, berries and orange juice, professional food photography",
+    "colorful assortment of fresh vegetables on a wooden table, natural lighting",
+    "organic salad with avocado, tomatoes, cucumbers and herbs, gourmet presentation",
+    "basket full of seasonal fruits in a blooming garden",
+    "tropical beach with turquoise water, palm trees and white sand",
+    "waterfall deep inside a lush green forest, magical atmosphere",
+    "golden wheat field under a dramatic sunset sky",
+    "lavender fields during golden hour, stunning landscape photography",
+    "fresh smoothie bowl with berries, kiwi, banana and granola, healthy food photography",
+    "organic farmers market with colorful fruits and vegetables",
+    "beautiful autumn forest with vibrant orange and red leaves",
+    "wildflower meadow beneath snow-capped mountains, ultra detailed"
 ]
 
 def generate_text():
